@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-border: hsl(0 0% 90%); /* Light gray border */
+  --color-input: hsl(0 0% 90%);
+  --color-ring: hsl(0 0% 15%);
+  
+  /* Escentual uses stark black and white */
+  --color-background: hsl(0 0% 100%); 
+  --color-foreground: hsl(0 0% 15%); 
+  
+  /* Primary becomes black for that premium/bold feel */
+  --color-primary: hsl(0 0% 10%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  
+  --color-secondary: hsl(0 0% 96%); /* Very light gray */
+  --color-secondary-foreground: hsl(0 0% 15%);
+  
+  --color-destructive: hsl(350 70% 50%); /* Keeping a red for offers/sale */
+  --color-destructive-foreground: hsl(0 0% 100%);
+  
+  --color-muted: hsl(0 0% 96%);
+  --color-muted-foreground: hsl(0 0% 40%);
+  
+  --color-accent: hsl(0 0% 96%);
+  --color-accent-foreground: hsl(0 0% 15%);
+  
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(0 0% 15%);
+  
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(0 0% 15%);
+
+  --radius-xl: 0; /* Escentual uses sharp edges */
+  --radius-lg: 0;
+  --radius-md: 0;
+  --radius-sm: 0;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.5rem; /* slightly less padding on mobile */
+  @media (width >= 100%) {
+    max-width: 1200px; /* Wider container for the web look */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
